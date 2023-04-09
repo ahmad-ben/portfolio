@@ -1,0 +1,86 @@
+.about-me{
+  padding: 30px;
+  .container{
+    .image-holder{
+      height: fit-content;
+      background-color: black;
+      border-radius: 20px;
+      padding: 5px;
+      overflow: hidden;
+      inset: 0;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        width: 150%;
+        height: 50%;
+        background-color: red;
+        top: 50%;
+        left: 50%;
+        background: linear-gradient(
+          transparent, #45f3ff, #45f3ff, #45f3ff, transparent
+        );
+        animation: rotation 4s linear infinite;
+      }
+      img{
+        max-width: 100%;
+        border-radius: 20px;
+        position: relative;
+        z-index: 100;
+      }
+    }
+    .information{
+      .text-info{
+        h3{
+          font-size: 9vh;
+        }
+        p{
+          font-size: 3vh;
+          span{
+            color: var(--main-blue);
+            font-family: "Raleway", sans-serif;
+            font-style: italic;
+            font-weight: 500;
+          }
+        }
+      }
+      .soft-skills{
+        .soft-skill{
+          background-color: var(--main-blue);
+          color: #fff;
+          text-align: center;
+          padding: 10px;
+          border-radius: 10px;
+          font-size: 3vh;
+          border: 5px solid var(--main-black);
+        }
+      }
+    }
+  }
+} 
+
+@media (max-width: 576px) {
+  .about-me{
+    .container{
+      .information{
+        .text-info{
+          h3{
+            font-size: 6vh;
+          }
+          p{
+            text-align: center;
+          }
+        }
+      }
+    }
+  } 
+}
+
+@keyframes rotation {
+  0%{
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

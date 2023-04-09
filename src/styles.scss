@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'Scss/Variables';
+
+body{
+  font-family: 'Alkatra', cursive;
+  background-color: var(--main-black);
+  color: #0dcaf0;
+}
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
