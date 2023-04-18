@@ -1,10 +1,10 @@
 export const environment = {
   firebaseConfig : {
-    apiKey: "AIzaSyDusIUkXGDZNipMCx6lq-t5KtHS5b1WfBk",
-    authDomain: "my-potfolio-92f06.firebaseapp.com",
-    projectId: "my-potfolio-92f06",
-    storageBucket: "my-potfolio-92f06.appspot.com",
-    messagingSenderId: "486564156248",
-    appId: "1:486564156248:web:a3df617d8385b429310b2d"
+    apiKey: "AIzaSyC75i0RaIVDZMrBgVbi9mmnkpAwryvxVPs",
+    authDomain: "my-portfolio-84cb6.firebaseapp.com",
+    projectId: "my-portfolio-84cb6",
+    storageBucket: "my-portfolio-84cb6.appspot.com",
+    messagingSenderId: "320650676048",
+    appId: "1:320650676048:web:c02e047d77458430704e55"
   }
 };

@@ -1,0 +1,55 @@
+.my-project{
+  .container{
+    .projects-header{
+
+    }
+    .projects{
+      .space{
+        background-color: var(--main-black);
+        .project{
+          background-color: #2a2a2a;
+          border-radius: 10px;
+          max-width: 400px;
+          h4{
+            border-bottom: 1px solid var(--main-blue);
+          }
+          :nth-child(2){
+            p{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0px;
+              margin: 0px;
+              font-size: 25px;
+            }
+            a{
+              overflow: hidden;
+              img{
+                width: 40px;
+                height: 40px;
+              }
+              span{
+
+              }
+            }
+          }
+          :nth-child(3){
+            a{
+              svg{}
+            }   
+            .features-images{
+              .feature-image{
+                overflow: hidden;
+                img{
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
