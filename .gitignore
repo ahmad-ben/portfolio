@@ -44,7 +44,7 @@ Thumbs.db
 #Notes File
 *.txt
 
-#Firebase Folder
+#Firebase folder
 /.firebase
 
 #Firebase File
@@ -54,10 +54,8 @@ firebase.json
 #Spelling Error File
 settings.json
 
-#Environmet Folder
-/environments
+# Ignore environment files
+/src/environments/*.ts
 
-#Environmet Files
-environment.development.ts
-environment.ts
+
 
