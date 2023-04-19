@@ -25,9 +25,8 @@ export class GithubApiService {
   getReposInfo(): Observable<(myProjectInfo | "")[]> {    
     const fullURL: string = `${this.primitiveURL}/users/${this.owner}/repos`;
     console.log(`${environment.authToken}`);
-    
     const normalHeaders = new HttpHeaders({
-      'Authorization': `${environment.authToken}`
+      'Authorization': `token ${environment.authToken}`
     })
     return this.httpClientIns.get(fullURL, { headers: normalHeaders }).pipe(
       switchMap((fullArrayOfReposInfo: any) => {
