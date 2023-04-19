@@ -24,19 +24,43 @@ export class MyProjectsComponent implements OnInit{
     'Skill 8 GH.png',
     'Skill 9 FB.webp',
   ];
+  featuresFirstRealWebsite: string[] = [
+    `./assets/Images/my skills/Skill 1 HTML.png`,
+    `./assets/Images/my skills/Skill 4 SASS.webp`,
+    `./assets/Images/my skills/Skill 5 BS.png`,
+    `./assets/Images/my skills/Skill 6 TS.png`,
+    `./assets/Images/my skills/Skill 7 NG.png`,
+  ];
   constructor(private httpSer: GithubApiService){}
   ngOnInit(): void {
+    const localArrayOfHandledReposInfo = JSON.parse(localStorage.getItem('ArrayOfHandledReposInfo') as string);
+    if(localArrayOfHandledReposInfo){
+      this.arrayOfHandledReposInfo = localArrayOfHandledReposInfo;
+    }else{
     this.httpSer.getReposInfo()
-    .pipe(
-      map((arrayOfHandledReposInfo: any) => {
-        return arrayOfHandledReposInfo
-          .filter((HandledRepoInfo: any) => HandledRepoInfo)
+      .pipe(
+        map<(myProjectInfo | "")[], myProjectInfo[]>((arrayOfHandledReposInfo: (myProjectInfo | "")[]) => {
+          const filteredArray =  arrayOfHandledReposInfo.filter((HandledRepoInfo: myProjectInfo | "") => HandledRepoInfo);
+          return filteredArray as myProjectInfo[];
+        })
+      )
+      .subscribe({
+        next: (nextPara : myProjectInfo[]) =>{ 
+          this.arrayOfHandledReposInfo = nextPara;
+          console.log(this.arrayOfHandledReposInfo);
+          this.arrayOfHandledReposInfo
+            .sort((handledRepoObject1, handledRepoObject2) => {
+              const dateOfObject1 : Date = new Date (handledRepoObject1.PublishDate);
+              const dateOfObject1ToNumber : number = dateOfObject1.getTime();
+              const dateOfObject2 : Date = new Date (handledRepoObject2.PublishDate);
+              const dateOfObject2ToNumber : number = dateOfObject2.getTime();
+              let ResultOfSubtraction : number = dateOfObject2ToNumber - dateOfObject1ToNumber ;
+              return ResultOfSubtraction;
+            })
+            console.log(this.arrayOfHandledReposInfo);
+          // localStorage.setItem('ArrayOfHandledReposInfo', JSON.stringify(this.arrayOfHandledReposInfo));
+        }
       })
-    )
-    .subscribe({
-      next: (nextPara : any) =>{ 
-        this.arrayOfHandledReposInfo = nextPara;
-      }
-    })
+    }
   }
 }

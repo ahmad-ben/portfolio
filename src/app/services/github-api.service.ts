@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, combineLatest, forkJoin, map, switchMap } from 'rxjs';
+import { Observable, catchError, combineLatest, forkJoin, map, of, switchMap } from 'rxjs';
+import { myProjectInfo } from 'src/Common/my-project-Info';
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +21,15 @@ export class GithubApiService {
   ];
   private primitiveURL: string = 'https://api.github.com';
   private owner: string  = 'ahmad-ben';
-  private authToken = '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'; 
-  getReposInfo() {
+  private authToken = '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'; 
+  getReposInfo(): Observable<(myProjectInfo | "")[]> {
     const fullURL: string = `${this.primitiveURL}/users/${this.owner}/repos`;
     const normalHeaders = new HttpHeaders({
-      'Authorization': `${this.authToken}`
+      'Authorization': `token ${this.authToken}`
     })
     return this.httpClientIns.get(fullURL, { headers: normalHeaders }).pipe(
       switchMap((fullArrayOfReposInfo: any) => {
-        const arrayResponseObs = fullArrayOfReposInfo.map((OneFullRepoInfo: any) => {
+          const arrayResponseObs = fullArrayOfReposInfo.map((OneFullRepoInfo: any) => {
           //* Repo Name
           const repoName: string = OneFullRepoInfo.name;
 
@@ -47,29 +48,35 @@ export class GithubApiService {
           const URLForEachRepoLanguages: string = `${this.primitiveURL}/repos/${this.owner}/${repoName}/languages`;
 
           //* Obs For Get The Languages Those I Used In Each Repo
-          const getFeatures$ = this.httpClientIns.get(URLForEachRepoLanguages, {  headers: normalHeaders })
+          const getFeatures$ = this.httpClientIns.get<Observable<string[]>>(URLForEachRepoLanguages, {  headers: normalHeaders })
           .pipe(map((resp) => Object.keys(resp)))
 
-          //* URL For Get The URL Github Pages For Each Repo Or Return Empty String
-          const url = `${this.primitiveURL}/repos/${this.owner}/${repoName}/pages`;
+          //* Make Sure That The Repo Has Github Pages URL
+          const RepoHasGithubURL: Boolean = OneFullRepoInfo.has_pages;
 
-          //* Specific Header For Get The URL Github Pages For Each Repo Or Return Empty String
-          const authHeaders = new HttpHeaders({'Authorization': `Bearer ${this.authToken}`});
+          //* Condition And Extract The Pages URL From The Repos Those Have Them
+          let getPagesURL$!: Observable<string>;
+          if(RepoHasGithubURL){
+            //* URL For Get The URL Github Pages For Each Repo Or Return Empty String
+            const url = `${this.primitiveURL}/repos/${this.owner}/${repoName}/pages`;
 
-          //* Obs For Get The URL Github Pages For Each Repo Or Return Empty String
-          const getPagesURL$ = this.httpClientIns.get(url, { headers: authHeaders }).pipe(
-            map((response: any) => response.html_url),
-            catchError((error) => 'noURL')
-          )
+            //* Specific Header For Get The URL Github Pages For Each Repo Or Return Empty String
+            const authHeaders = new HttpHeaders({'Authorization': `Bearer ${this.authToken}`});
+
+            //* Obs For Get The URL Github Pages For Each Repo Or Return Empty String
+            getPagesURL$ = this.httpClientIns.get<Observable<string>>(url, { headers: authHeaders }).pipe(
+              map((response: any) => response.html_url as string),
+              catchError((error) => {throw new Error('noURL')}))
+          }else{ getPagesURL$ = of('noURL') }
 
           //* Obs For Subscribe Automatically With The Two Previous Observables
           let ResponseObs$ = combineLatest([getFeatures$, getPagesURL$]).pipe(
-            map((ArrayFeaturesURLPages: any[]) => {
+            map<[string[], string] ,'' | myProjectInfo>((ArrayFeaturesURLPages: [string[], string]) => {
 
               //? Get The Array Of Usage Languages And Turn Them To The URL For The Correspondent Image 
               const ArrayOfFeatures: string[] = ArrayFeaturesURLPages[0];
-              const GithubPagesURL: string = ArrayFeaturesURLPages[1];
-              const arrayOfURLFeatures = ArrayOfFeatures.map((feature: any) => {
+              const GithubPagesURL: string = ArrayFeaturesURLPages[1];              
+              const arrayOfURLFeatures: string[]= ArrayOfFeatures.map((feature: string) => {
                 if(feature == 'TypeScript'){
                   feature = 'TS';
                 }else if(feature == 'SCSS'){
@@ -99,13 +106,15 @@ export class GithubApiService {
               }
             })
           )
-          return ResponseObs$;
+          return ResponseObs$ as Observable<"" | myProjectInfo>;
         });
-        return forkJoin(arrayResponseObs)
-      })
+        return (forkJoin<(myProjectInfo | "")[]>(arrayResponseObs)) as Observable<(myProjectInfo | "")[]>
+      }) 
     )
   }
 }
+
+
 
 
 
