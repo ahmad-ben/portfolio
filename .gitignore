@@ -44,5 +44,10 @@ Thumbs.db
 #Notes File
 *.txt
 
+#Firebase Files
+firebase.json
+.firebaserc
+/firebase
+
 #Spelling Error File
 settings.json

@@ -21,7 +21,7 @@ export class GithubApiService {
   ];
   private primitiveURL: string = 'https://api.github.com';
   private owner: string  = 'ahmad-ben';
-  private authToken = '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'; 
+  private authToken = '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'; 
   getReposInfo(): Observable<(myProjectInfo | "")[]> {
     const fullURL: string = `${this.primitiveURL}/users/${this.owner}/repos`;
     const normalHeaders = new HttpHeaders({
