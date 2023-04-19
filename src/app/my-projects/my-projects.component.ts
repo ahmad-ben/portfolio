@@ -47,7 +47,6 @@ export class MyProjectsComponent implements OnInit{
       .subscribe({
         next: (nextPara : myProjectInfo[]) =>{ 
           this.arrayOfHandledReposInfo = nextPara;
-          console.log(this.arrayOfHandledReposInfo);
           this.arrayOfHandledReposInfo
             .sort((handledRepoObject1, handledRepoObject2) => {
               const dateOfObject1 : Date = new Date (handledRepoObject1.PublishDate);
@@ -57,7 +56,6 @@ export class MyProjectsComponent implements OnInit{
               let ResultOfSubtraction : number = dateOfObject2ToNumber - dateOfObject1ToNumber ;
               return ResultOfSubtraction;
             })
-            console.log(this.arrayOfHandledReposInfo);
           // localStorage.setItem('ArrayOfHandledReposInfo', JSON.stringify(this.arrayOfHandledReposInfo));
         }
       })

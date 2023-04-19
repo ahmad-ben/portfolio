@@ -20,17 +20,9 @@ export class GithubApiService {
     'Skill 8 GH.png',
     'Skill 9 FB.webp',
   ];
-  ngOnInit(){
-
-    // console.log('Heree', environment.authToken);
-    console.log('Here');
-  }
   private primitiveURL: string = 'https://api.github.com';
   private owner: string  = 'ahmad-ben';
-  getReposInfo(): Observable<(myProjectInfo | "")[]> {
-        console.log('Heree', environment.authToken);
-        console.log('Here');
-    
+  getReposInfo(): Observable<(myProjectInfo | "")[]> {    
     const fullURL: string = `${this.primitiveURL}/users/${this.owner}/repos`;
     const normalHeaders = new HttpHeaders({
       'Authorization': `${environment.authToken}`
