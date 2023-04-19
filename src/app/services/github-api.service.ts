@@ -26,7 +26,7 @@ export class GithubApiService {
     const fullURL: string = `${this.primitiveURL}/users/${this.owner}/repos`;
     console.log(`${environment.authToken}`);
     const normalHeaders = new HttpHeaders({
-      'Authorization': `token ${environment.authToken}`
+      'Authorization': `${environment.authToken}`
     })
     return this.httpClientIns.get(fullURL, { headers: normalHeaders }).pipe(
       switchMap((fullArrayOfReposInfo: any) => {
