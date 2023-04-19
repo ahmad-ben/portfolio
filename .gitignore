@@ -44,10 +44,20 @@ Thumbs.db
 #Notes File
 *.txt
 
-#Firebase Files
+#Firebase Folder
+/.firebase
+
+#Firebase File
 firebase.json
 .firebaserc
-/firebase
 
 #Spelling Error File
 settings.json
+
+#Environmet Folder
+/environments
+
+#Environmet Files
+environment.development.ts
+environment.ts
+

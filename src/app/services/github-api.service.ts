@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, combineLatest, forkJoin, map, of, switchMap } from 'rxjs';
 import { myProjectInfo } from 'src/Common/my-project-Info';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +20,20 @@ export class GithubApiService {
     'Skill 8 GH.png',
     'Skill 9 FB.webp',
   ];
+  ngOnInit(){
+
+    // console.log('Heree', environment.authToken);
+    console.log('Here');
+  }
   private primitiveURL: string = 'https://api.github.com';
   private owner: string  = 'ahmad-ben';
-  private authToken = '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'; 
   getReposInfo(): Observable<(myProjectInfo | "")[]> {
+        console.log('Heree', environment.authToken);
+        console.log('Here');
+    
     const fullURL: string = `${this.primitiveURL}/users/${this.owner}/repos`;
     const normalHeaders = new HttpHeaders({
-      'Authorization': `token ${this.authToken}`
+      'Authorization': `token ${environment.authToken}`
     })
     return this.httpClientIns.get(fullURL, { headers: normalHeaders }).pipe(
       switchMap((fullArrayOfReposInfo: any) => {
@@ -61,7 +69,7 @@ export class GithubApiService {
             const url = `${this.primitiveURL}/repos/${this.owner}/${repoName}/pages`;
 
             //* Specific Header For Get The URL Github Pages For Each Repo Or Return Empty String
-            const authHeaders = new HttpHeaders({'Authorization': `Bearer ${this.authToken}`});
+            const authHeaders = new HttpHeaders({'Authorization': `Bearer ${environment.authToken}`});
 
             //* Obs For Get The URL Github Pages For Each Repo Or Return Empty String
             getPagesURL$ = this.httpClientIns.get<Observable<string>>(url, { headers: authHeaders }).pipe(

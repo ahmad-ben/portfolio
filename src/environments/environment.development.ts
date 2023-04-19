@@ -1,4 +1,5 @@
 export const environment = {
+  authToken: "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",
   firebaseConfig : {
     apiKey: "AIzaSyC75i0RaIVDZMrBgVbi9mmnkpAwryvxVPs",
     authDomain: "my-portfolio-84cb6.firebaseapp.com",
