@@ -75,9 +75,16 @@ export class GithubApiService {
           let ResponseObs$ = combineLatest([getFeatures$, getPagesURL$]).pipe(
             map<[string[], string] ,'' | myProjectInfo>((ArrayFeaturesURLPages: [string[], string]) => {
 
-              //? Get The Array Of Usage Languages And Turn Them To The URL For The Correspondent Image 
+              //:: Get The Array Of Usage Languages And Turn Them To The URL For The Correspondent Image 
               const ArrayOfFeatures: string[] = ArrayFeaturesURLPages[0];
-              const GithubPagesURL: string = ArrayFeaturesURLPages[1];              
+              const GithubPagesURL: string = ArrayFeaturesURLPages[1];    
+              console.log('Github Pages:', GithubPagesURL);
+              
+              if(
+                GithubPagesURL == 'https://ahmad-ben.github.io/Angular-Bootstrap-Firebase/' ||
+                GithubPagesURL == 'https://ahmad-ben.github.io/portfolio/' ||
+                GithubPagesURL == 'https://ahmad-ben.github.io/organic-shop/'
+              ){ ArrayOfFeatures.push('NG') }
               const arrayOfURLFeatures: string[]= ArrayOfFeatures.map((feature: string) => {
                 if(feature == 'TypeScript'){
                   feature = 'TS';
@@ -94,7 +101,7 @@ export class GithubApiService {
                 return feature;
               })
 
-              //? Check If The Array Of Usage Languages Empty Or Not
+              //:: Check If The Array Of Usage Languages Empty Or Not
               if(arrayOfURLFeatures.length > 0 ){
                 return {
                   repoName: repoName,
