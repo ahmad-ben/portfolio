@@ -1,0 +1,33 @@
+form{
+  .holder{
+    input{
+      min-width: 280px;
+    }
+  }
+  textarea{
+    max-width: 580px;
+    min-height: 160px;
+    resize: none;
+  }
+  .submit-btn{
+    width: fit-content;
+    margin: auto;
+    padding: 6px 14px;
+    font-size: 20px;
+    border: 2px solid var(--main-blue);
+    color: var(--main-blue);
+    transition: var(--transition-time);
+    &.active{
+      border-color: white;
+      background-color: var(--main-blue);
+      color: white;
+    }
+    &.inactive{
+      cursor: not-allowed;
+    }
+  }
+  .error{
+    color: #FF5454;
+    font-size: 18px;
+  }
+}

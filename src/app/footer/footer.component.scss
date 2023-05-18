@@ -1,0 +1,31 @@
+footer{ 
+  font-size: 22px;
+  color: white;
+  border-top: 1px solid var(--main-blue);
+  span{
+    color: var(--main-blue);
+  }
+  .love{ 
+    color: #A6ADBF; 
+  }
+}
+
+@media (max-width: 767px) {
+  footer{
+    font-size: 18px;
+    svg{
+      width:  26px;
+      height: 26px;
+    }
+  }
+}
+
+@media (max-width: 455px) {
+  footer{
+    font-size: 14px;
+    svg{
+      width:  20px;
+      height: 20px;
+    }
+  }
+}

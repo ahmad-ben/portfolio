@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { myProjectInfo } from 'src/Common/my-project-Info';
-import { GithubApiService } from '../services/github-api.service';
+import { GithubApiService } from '../services/github/github-api.service';
 
 @Component({
   selector: 'my-projects',

@@ -1,0 +1,94 @@
+<form (ngSubmit)="save(messageInfo)" [formGroup]="messageInfo">
+
+  <div class="holder d-flex flex-wrap justify-content-around align-items-center">
+
+    <div class="input col-12 col-md-6">
+      <div class="form-group ">
+        <label for="firstName"> First Name* </label>
+        <input
+          id="firstName" type="text" class="form-control" placeholder="Ahmed"
+          formControlName="firstName"
+        >
+      </div>
+      <p 
+        class="error text-md-center mb-0"
+        *ngIf="messageInfo.controls['firstName'].errors && messageInfo.controls['firstName'].touched"
+      >The First Name is required</p>
+    </div>
+
+    <div class="input col-12 col-md-6">
+      <div class="form-group p-md-2">
+        <label for="lastName"> Last Name* </label>
+        <input
+          id="lastName" type="text" class="form-control" placeholder="Ben Chakhter"
+          formControlName="lastName"
+        >
+      </div>
+      <p 
+        class="error text-md-center mb-0"
+        *ngIf="messageInfo.controls['lastName'].errors && messageInfo.controls['lastName'].touched"
+      >The Last Name is required</p>
+    </div>
+
+  </div>
+
+  <div class="holder d-flex flex-wrap justify-content-around align-items-center">
+
+    <div class="input col-12 col-md-6">
+      <div class="form-group p-md-2">
+        <label for="email"> Email* </label>
+        <input
+          id="email" type="text" class="form-control" placeholder="ahmadbenchakhti@gmail.com"
+          formControlName="email"
+        >
+      </div>
+      <div *ngIf="messageInfo.controls['email'].touched">
+        <p 
+          class="error text-md-center mb-0"
+          *ngIf="messageInfo.controls['email'].errors?.['required']"
+        >The email is required</p>
+        <p 
+          class="error text-md-center mb-0"
+          *ngIf="messageInfo.controls['email'].errors?.['email']"
+        >Please enter a valid email</p>
+      </div>
+    </div>
+
+    <div class="form-group p-md-2 input col-12 col-md-6">
+      <label for="subject"> Subject </label>
+      <input
+        id="subject" type="text" class="form-control" 
+        placeholder="Hi, Ahmed. I'm Texting You For..."
+        formControlName="subject"
+      >
+    </div>
+
+  </div>
+
+  <div class="form-group  mt-3 d-flex flex-column align-items-center">
+    <label for="message"> Message </label>
+    <textarea
+      id="message" type="text" class="form-control" 
+      placeholder="Ask For Task Or Job, Note, Comment, Opinion..."
+      formControlName="message"
+    ></textarea>
+  </div>
+    <p 
+      class="error text-md-center mb-0"
+      *ngIf="messageInfo.controls['message'].errors && messageInfo.controls['message'].touched"
+    >The Message is required</p>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <button
+      class="submit-btn btn mt-4 mb-2 d-block" type="submit"
+      [class.active]="messageInfo.valid"
+      [ngClass]="messageInfo.valid ? 'active' : 'inactive'"
+      (click)="save(messageInfo)"
+    > continue </button>
+  </div>
+  <p 
+    class="error text-md-center mb-0 text-center"
+    *ngIf="invalidFrom && messageInfo.invalid && messageInfo.touched"
+  >Please Fill All The Required Inputs Properly.</p>
+  
+</form>
