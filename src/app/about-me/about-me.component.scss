@@ -9,6 +9,8 @@
       overflow: hidden;
       inset: 0;
       position: relative;
+      transform: translateX(-200%);
+      transition: var(--transition-time);
       &::after{
         content: '';
         position: absolute;
@@ -22,6 +24,9 @@
         );
         animation: rotation 4s linear infinite;
       }
+      &.show{
+        transform: translateX(0%);
+      }
       img{
         max-width: 100%;
         border-radius: 20px;
@@ -30,12 +35,16 @@
       }
     }
     .information{
+      overflow: hidden;
       .text-info{
-        h3{
-          font-size: 9vh;
+        transform: translateX(200%);
+        transition: var(--transition-time);
+        &.show{
+          transform: translateX(0%);
         }
+        h3{}
         p{
-          font-size: 3vh;
+          font-size: 2.25rem;
           span{
             color: var(--main-blue);
             font-family: "Raleway", sans-serif;
@@ -45,13 +54,18 @@
         }
       }
       .soft-skills{
+        transform: translateX(200%);
+        transition: var(--transition-time);
+        &.show{
+          transform: translateX(0%);
+        }
         .soft-skill{
           background-color: var(--main-blue);
           color: #fff;
           text-align: center;
           padding: 10px;
           border-radius: 10px;
-          font-size: 3vh;
+          font-size: 2rem;
           border: 5px solid var(--main-black);
         }
       }
@@ -59,17 +73,14 @@
   }
 } 
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .about-me{
     .container{
       .information{
+        text-align: center;
         .text-info{
-          h3{
-            font-size: 6vh;
-          }
-          p{
-            text-align: center;
-          }
+          h3{}
+          p{}
         }
       }
     }

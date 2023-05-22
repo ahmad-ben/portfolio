@@ -72,17 +72,17 @@
       color: #fff;
       .hi{
         display: block; 
-        font-size: 12vh;
+        font-size: 4.5rem;
       }
       .name{
         display: block;
-        font-size: 4vh;
+         font-size: 3rem;
         span{
           color: #2982b9;
         }
       }
       .job{
-        font-size: 4vh;
+        font-size: 3rem;
         span{
           display: block;
           color: var(--main-blue);
@@ -91,6 +91,148 @@
     }
   }
 }
+
+
+@media (max-width: 1000px) {
+  .navbar{
+    padding: 60px 0px 40px;
+    nav{
+      svg{
+        color: var(--main-blue);
+        display: none;
+      }
+      ul{
+        position: relative;
+        transform: skewY(-15deg);
+        li{
+          z-index: var(--i);
+          transition: var(--transition-time);
+          &:hover{
+            background-color: #33a3ee;
+            transform: translateX(25px);
+            a{
+              color: #fff;
+            }
+            &::before{
+              background-color: #1f5378;
+            }
+            &::after{
+              background-color: var(--main-blue);
+            }
+          }
+          &:before{
+            content: '';
+            position: absolute;
+            background-color: #2e3133;
+            width: 40px;
+            height: 100%;
+            top: 0;
+            left: -40px;
+            transform: skewY(45deg);
+            transform-origin: right;
+            transition: var(--transition-time);
+          }
+          &:after{
+            content: '';
+            position: absolute;
+            background-color: #35383e;
+            width: 100%;
+            height: 40px;
+            top: -40px;
+            left: 0;
+            transform: skewX(45deg);
+            transform-origin: bottom;
+            transition: var(--main-blue);
+          }
+          position: relative;
+          width: 200px;
+          background-color: #3e3f46;
+          padding: 15px;
+          a{
+            color: #999;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            transition: var(--transition-time);
+            text-decoration: none;
+          }
+          &:last-child::after{
+            box-shadow: -110px 110px 20px rgba($color: #000000, $alpha: .25);
+          }
+        }
+      }
+    }
+    .introduce{
+      text-align: center;
+      p{
+        color: #fff;
+        .hi{
+          display: block; 
+        }
+        .name{
+          display: block;
+          span{
+            color: #2982b9;
+          }
+        }
+        .job{
+          span{
+            display: block;
+            color: var(--main-blue);
+          }
+        }      
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1050px) {
+  .navbar{
+      nav{
+        svg{
+          &.active{
+          }
+        }
+        ul{
+          li{
+            &:hover{
+              a{
+              }
+              &::before{
+              }
+              &::after{
+              }
+            }
+            &:before{
+            }
+            &:after{
+
+            }
+            a{
+            }
+          }
+          &.active{
+          }
+        }
+      }
+    .introduce{
+      p{
+        .hi{ 
+        }
+        .name{
+          span{
+          }
+        }
+        .job{
+          span{
+          }
+        }      
+      }
+    }
+  }
+}
+
 
 @media (max-width: 767px) {
   .navbar{
@@ -122,6 +264,7 @@
           border: 2px solid #000000;
           box-shadow: 0px 0px 10px black;
           padding: 0px;
+          z-index: 100;
           li{
             background-color: #434750f2;
             &:hover{
@@ -165,6 +308,15 @@
           }
         }      
       }
+    }
+  }
+}
+
+
+@media (max-width: 399px) {
+  .navbar{
+    nav{
+      left: 83%;
     }
   }
 }

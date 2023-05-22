@@ -5,7 +5,6 @@ form{
     }
   }
   textarea{
-    max-width: 580px;
     min-height: 160px;
     resize: none;
   }
@@ -13,7 +12,7 @@ form{
     width: fit-content;
     margin: auto;
     padding: 6px 14px;
-    font-size: 20px;
+    font-size: 2rem;
     border: 2px solid var(--main-blue);
     color: var(--main-blue);
     transition: var(--transition-time);
@@ -28,6 +27,21 @@ form{
   }
   .error{
     color: #FF5454;
-    font-size: 18px;
+    font-size: 1.8rem;
   }
+}
+
+@media (min-width: 768px) {
+  .holder{
+    input{
+      max-width: 310px;
+    }
+  }
+  textarea{
+    max-width: 400px;
+  }
+}
+
+.form-control{
+  font-size: 1.6rem;
 }

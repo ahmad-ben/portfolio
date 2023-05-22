@@ -1,5 +1,5 @@
 footer{ 
-  font-size: 22px;
+  font-size: 2.2rem;
   color: white;
   border-top: 1px solid var(--main-blue);
   span{
@@ -12,7 +12,7 @@ footer{
 
 @media (max-width: 767px) {
   footer{
-    font-size: 18px;
+    font-size: 1.8rem;
     svg{
       width:  26px;
       height: 26px;
@@ -22,7 +22,7 @@ footer{
 
 @media (max-width: 455px) {
   footer{
-    font-size: 14px;
+    font-size: 1.4rem;
     svg{
       width:  20px;
       height: 20px;

@@ -5,16 +5,13 @@
 }
 
 @media (max-width: 767px) {
-  .map{
-    height: 350px;
-  }
-}
-
-@media (max-width: 767px) {
   .social-media{
     svg{
       width: 35px;
       height: 35px;
     }
+  }
+  .map{
+    height: 350px;
   }
 }

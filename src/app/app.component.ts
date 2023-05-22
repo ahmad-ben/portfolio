@@ -34,5 +34,5 @@ import { NavbarComponent } from './navbar/navbar.component';
   styles: []
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'Ahmed Ben Chakhter';
 }
