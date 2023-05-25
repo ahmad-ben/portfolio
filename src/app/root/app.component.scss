@@ -1,0 +1,21 @@
+.mode{
+  position: fixed;
+  top: 70px;
+  right: calc(0% + 5px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  transition: var(--transition-time);
+  &.dark{
+    background-color: white;
+    svg { fill: black; }
+  }
+  &.light{
+    background-color: black;
+    svg{ fill: white }
+  }
+}

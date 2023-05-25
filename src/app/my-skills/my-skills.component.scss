@@ -6,7 +6,7 @@
     .skills{
       .skill{
         background-color: #2a2a2a;
-        border: 3px solid var(--main-black);
+        border: 3px solid var(--boxes-space);
         padding: 10px 0px;
         border-radius: 10px;
         box-shadow: 0px 0px 10px inset white;
@@ -66,11 +66,12 @@
             }
           }
       }
-        span{
-          display: block;
-          padding: 5px 0px;
-          letter-spacing: 2px;
-          text-transform: uppercase;
+      span{
+        display: block;
+        padding: 5px 0px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #00d4ff;
       }
     }
   }
@@ -90,113 +91,36 @@
   }
 }
 
-@keyframes dotAnimate {
-  0%{
-    transform: rotate(0%);
-  }
-  100%{
-    transform: rotate(calc(3.6deg * var(--num)));
-  }
-}
-
-@keyframes fadeIn {
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}.my-skills{
-  padding-bottom: 30px;
+.my-skills{
   .container{
-    h3{
-    }
+    h3{}
     .skills{
       .skill{
-        background-color: #2a2a2a;
-        border: 3px solid var(--main-black);
-        padding: 10px 0px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px inset white;
-        max-width: 400px;
         &:hover{
           .skill-design{
-            .image-holder{
-              transform: translate(-50%, -50%) rotate(5deg) scale(1.1);
-            }
+            .image-holder{}
           }
         }
       }
         .skill-design{
-          position: relative;
           .percent{
-            position: relative;
-            width: 150px;
-            height: 150px;
             .dot{
-              position: absolute;
-              z-index: 10;
-              inset: 5px;
-              animation: dotAnimate 2s linear forwards;
-              &::before{
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                background-color: var(--clr);
-                left: 50%;
-                top: -5px;
-                transform: translateX(-50%);
-                border-radius: 50%;
-                box-shadow: 
-                  0 0 10px var(--clr),
-                  0 0 30px var(--clr);
-              }
+              &::before{}
             }
             svg{
-              position: relative;
-              width: 100%;
-              height: 100%;
-              transform: rotate(270deg);
               circle{
-                fill: transparent;
-                stroke: #2a2a2a;
-                stroke-width: 2;
-                &:nth-child(2){
-                  stroke: var(--clr);
-                  stroke-dasharray: 440;
-                  stroke-dashoffset: calc(440 - (440 * var(--num))/ 100);
-                  animation: fadeIn 2s linear forwards;
-                  animation-delay: 2.5s;
-                  opacity: 0;
-                }
+                &:nth-child(2){}
               }
             }
-            .image-holder{
-              position: absolute;
-              width: 70px;
-              height: 70px;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              transition: var(--transition-time);
-              img{
-                max-width: 100%;
-                max-height: 100%;
-              }
-            }
+            .image-holder{}
           }
-
       }
-        span{
-          display: block;
-          padding: 5px 0px;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-      }
+        span{}
     }
   }
 }
+
+/* Animation */
 
 @keyframes dotAnimate {
   0%{

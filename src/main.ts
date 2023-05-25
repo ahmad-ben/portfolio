@@ -15,7 +15,7 @@ import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import { getFirestore } from 'firebase/firestore';
 import { routes } from './app/app-routing.module';
-import { AppComponent } from "./app/app.component";
+import { AppComponent } from "./app/root/app.component";
 import { environment } from "./environments/environment";
 
 

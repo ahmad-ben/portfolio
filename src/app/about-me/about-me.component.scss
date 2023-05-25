@@ -36,7 +36,7 @@
     }
     .information{
       overflow: hidden;
-      .text-info{
+      .text-information{
         transform: translateX(200%);
         transition: var(--transition-time);
         &.show{
@@ -46,7 +46,7 @@
         p{
           font-size: 2.25rem;
           span{
-            color: var(--main-blue);
+            color: var(--secondary-font-color);
             font-family: "Raleway", sans-serif;
             font-style: italic;
             font-weight: 500;
@@ -60,13 +60,13 @@
           transform: translateX(0%);
         }
         .soft-skill{
-          background-color: var(--main-blue);
+          background-color: var(--secondary-font-color);
           color: #fff;
           text-align: center;
           padding: 10px;
           border-radius: 10px;
           font-size: 2rem;
-          border: 5px solid var(--main-black);
+          border: 5px solid var(--boxes-space); 
         }
       }
     }
@@ -78,7 +78,7 @@
     .container{
       .information{
         text-align: center;
-        .text-info{
+        .text-information{
           h3{}
           p{}
         }

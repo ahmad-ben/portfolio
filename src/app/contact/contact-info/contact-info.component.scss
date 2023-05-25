@@ -1,3 +1,15 @@
+.personal-info{
+  svg{ fill: var(--primary-font-color); }
+  .social-media{
+    svg{
+      width: 35px;
+      height: 35px;
+      fill: var(--secondary-font-color);
+    }
+  }
+}
+
+
 .map iframe {
   width: 100%;
   height: 100%;

@@ -7,10 +7,15 @@
 
 
 body{
-  font-family: 'Alkatra', cursive;
-  background-color: var(--main-black);
-  color: #0dcaf0;
   font-size: 1.6rem; //=> 1.6 * 10Px = 16px
+
+  font-family: 'Alkatra', cursive;
+
+  background-color: var(--back-color);
+
+  color: var(--primary-font-color);
+
+  transition: var(--transition-time);
 }
 
 
@@ -22,12 +27,7 @@ body{
   list-style: none;
 }
 
+h3{ font-size: 3.5rem }
 
-h3{
-  font-size: 3.5rem;
-}
-
-h4{
-  font-size: 2.4rem;
-}
+h4{ font-size: 2.4rem }
 

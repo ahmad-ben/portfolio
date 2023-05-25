@@ -2,26 +2,26 @@
   padding: 60px 0px 40px;
   nav{
     svg{
-      color: var(--main-blue);
       display: none;
     }
     ul{
       position: relative;
       transform: skewY(-15deg);
       li{
+        background-color: #3e3f46;
         z-index: var(--i);
         transition: var(--transition-time);
+        position: relative;
+        width: 200px;
+        padding: 15px;
         &:hover{
-          background-color: #33a3ee;
           transform: translateX(25px);
-          a{
-            color: #fff;
-          }
+          background-color: #33a3ee;
           &::before{
-            background-color: #1f5378;
+            background-color: #1f5378; //Will Not Change In The Two Mode.
           }
           &::after{
-            background-color: var(--main-blue);
+            background-color: #2982b9; //Will Not Change In The Two Mode.
           }
         }
         &:before{
@@ -46,14 +46,9 @@
           left: 0;
           transform: skewX(45deg);
           transform-origin: bottom;
-          transition: var(--main-blue);
         }
-        position: relative;
-        width: 200px;
-        background-color: #3e3f46;
-        padding: 15px;
         a{
-          color: #999;
+          color: #fff;
           display: block;
           text-transform: uppercase;
           letter-spacing: 0.05rem;
@@ -69,7 +64,6 @@
   .introduce{
     text-align: center;
     p{
-      color: #fff;
       .hi{
         display: block; 
         font-size: 4.5rem;
@@ -78,14 +72,14 @@
         display: block;
          font-size: 3rem;
         span{
-          color: #2982b9;
+          color: var(--secondary-font-color);
         }
       }
       .job{
         font-size: 3rem;
         span{
           display: block;
-          color: var(--main-blue);
+          color: var(--secondary-font-color);
         }
       }      
     }
@@ -95,138 +89,30 @@
 
 @media (max-width: 1000px) {
   .navbar{
-    padding: 60px 0px 40px;
     nav{
-      svg{
-        color: var(--main-blue);
-        display: none;
-      }
+      svg{}
       ul{
-        position: relative;
-        transform: skewY(-15deg);
         li{
-          z-index: var(--i);
-          transition: var(--transition-time);
           &:hover{
-            background-color: #33a3ee;
-            transform: translateX(25px);
-            a{
-              color: #fff;
-            }
-            &::before{
-              background-color: #1f5378;
-            }
-            &::after{
-              background-color: var(--main-blue);
-            }
+            a{}
+            &::before{}
+            &::after{}
           }
-          &:before{
-            content: '';
-            position: absolute;
-            background-color: #2e3133;
-            width: 40px;
-            height: 100%;
-            top: 0;
-            left: -40px;
-            transform: skewY(45deg);
-            transform-origin: right;
-            transition: var(--transition-time);
-          }
-          &:after{
-            content: '';
-            position: absolute;
-            background-color: #35383e;
-            width: 100%;
-            height: 40px;
-            top: -40px;
-            left: 0;
-            transform: skewX(45deg);
-            transform-origin: bottom;
-            transition: var(--main-blue);
-          }
-          position: relative;
-          width: 200px;
-          background-color: #3e3f46;
-          padding: 15px;
-          a{
-            color: #999;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0.05rem;
-            transition: var(--transition-time);
-            text-decoration: none;
-          }
-          &:last-child::after{
-            box-shadow: -110px 110px 20px rgba($color: #000000, $alpha: .25);
-          }
+          &:before{}
+          &:after{}
+          a{}
+          &:last-child::after{}
         }
       }
     }
     .introduce{
-      text-align: center;
       p{
-        color: #fff;
-        .hi{
-          display: block; 
-        }
+        .hi{}
         .name{
-          display: block;
-          span{
-            color: #2982b9;
-          }
+          span{}
         }
         .job{
-          span{
-            display: block;
-            color: var(--main-blue);
-          }
-        }      
-      }
-    }
-  }
-}
-
-
-@media (max-width: 1050px) {
-  .navbar{
-      nav{
-        svg{
-          &.active{
-          }
-        }
-        ul{
-          li{
-            &:hover{
-              a{
-              }
-              &::before{
-              }
-              &::after{
-              }
-            }
-            &:before{
-            }
-            &:after{
-
-            }
-            a{
-            }
-          }
-          &.active{
-          }
-        }
-      }
-    .introduce{
-      p{
-        .hi{ 
-        }
-        .name{
-          span{
-          }
-        }
-        .job{
-          span{
-          }
+          span{}
         }      
       }
     }
@@ -248,17 +134,17 @@
           cursor: pointer;
           width: 30px;
           height: 30px;
-          fill: #fff;
+          fill: var(--primary-font-color); // Change Every white
           transition: var(--transition-time);
           &.active{
-            fill: var(--main-blue);
+            fill: var(--secondary-font-color);
           }
         }
         ul{
+          position: absolute;
+          transform: skewY(0deg);
           display: none;
           transition: var(--transition-time);
-          transform: skewY(0deg);
-          position: absolute;
           top: 100%;
           left: calc(100% - 210px);
           border: 2px solid #000000;
@@ -266,46 +152,28 @@
           padding: 0px;
           z-index: 100;
           li{
-            background-color: #434750f2;
+            background-color: #434750f2; //Will Not Change
             &:hover{
               transform: translateX(0px);
-              a{
-                transform: translateX(10px);
-              }
-              &::before{
-                display: none;
-              }
-              &::after{
-                display: none;
-              }
+              a{ transform: translateX(10px) }
+              &::before{ display: none; }
+              &::after{ display: none; }
             }
-            &:before{
-              display: none;
-            }
-            &:after{
-              display: none;
-
-            }
-            a{
-              color: #fff;
-            }
+            &:before{ display: none; }
+            &:after{ display: none; }
+            a{}
           }
-          &.active{
-            display: block;
-          }
+          &.active{ display: block }
         }
       }
     .introduce{
       p{
-        .hi{
-        }
+        .hi{}
         .name{
-          span{
-          }
+          span{}
         }
         .job{
-          span{
-          }
+          span{}
         }      
       }
     }
@@ -315,8 +183,6 @@
 
 @media (max-width: 399px) {
   .navbar{
-    nav{
-      left: 83%;
-    }
+    nav{ left: 83% }
   }
 }

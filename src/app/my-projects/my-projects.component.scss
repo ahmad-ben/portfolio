@@ -5,13 +5,14 @@
     }
     .projects{
       .space{
-        background-color: var(--main-black);
+        background-color: var(--project-space);
         .project{
+          color: #00d4ff;
           background-color: #2a2a2a;
           border-radius: 10px;
           max-width: 400px;
           h4{
-            border-bottom: 1px solid var(--main-blue);
+            border-bottom: 1px solid #009afa;
           }
           :nth-child(2){
             p{
