@@ -28,14 +28,22 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class AppComponent {
   title = 'Ahmed Ben Chakhter';
   darkMode: boolean= true;
+  needScroll: boolean= false;
+
+  constructor() {
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 100) this.needScroll = true;
+      else this.needScroll = false;
+    })
+  }
 
   changeMode(btnElement: HTMLElement){
     this.darkMode = !this.darkMode;
     console.log(this.darkMode);
     if (this.darkMode){
-      document.documentElement.style.setProperty('--back-color', '#434750')
-      document.documentElement.style.setProperty('--primary-font-color', '#00d4ff')
-      document.documentElement.style.setProperty('--secondary-font-color', '#009afa')
+      document.documentElement.style.setProperty('--back-color', '#434750');
+      document.documentElement.style.setProperty('--primary-font-color', '#00d4ff');
+      document.documentElement.style.setProperty('--secondary-font-color', '#009afa');
       document.documentElement.style.setProperty('--boxes-space', '#434750');
       document.documentElement.style.setProperty('--error-color', '#FF5454');
     } else{
@@ -46,6 +54,11 @@ export class AppComponent {
       document.documentElement.style.setProperty('--error-color', '#a51d1d');
     }  
   }
+
+  goToTop(){
+    window.scroll(0, 0);
+  }
+
 
 
 }

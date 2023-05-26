@@ -1,7 +1,7 @@
 .mode{
   position: fixed;
   top: 70px;
-  right: calc(0% + 5px);
+  right: calc(0% + 2%);
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -18,4 +18,33 @@
     background-color: black;
     svg{ fill: white }
   }
+}
+
+.scroll-up{
+  position: fixed;
+  bottom: 2%;
+  right: calc(0% + 2%);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  transition: var(--transition-time);
+  animation: up-down 1s infinite alternate;
+  &.dark{
+    background-color: white;
+    svg { fill: black; }
+  }
+  &.light{
+    background-color: black;
+    svg{ fill: white }
+  }
+}
+
+@keyframes up-down {
+  from{ transform: translateY(0px)  }
+  to { transform: translateY(5px) }
+  // to  { transform: translateY(0px)  }
 }

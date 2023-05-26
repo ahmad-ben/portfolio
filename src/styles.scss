@@ -5,6 +5,9 @@
   font-size: 62.5%; //=> 16Px * 0.625 = 10Px
 }
 
+html{
+  scroll-behavior: smooth;
+}
 
 body{
   font-size: 1.6rem; //=> 1.6 * 10Px = 16px
