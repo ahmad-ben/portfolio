@@ -1,15 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs';
-import { myProjectInfo } from 'src/Common/my-project-Info';
-import { ProjectComponent } from '../components/project/project.component';
+import { Component } from '@angular/core';
 import {
   eighthProjectData, fifthProjectData, firstProjectData,
   forthProjectData, ninthProjectData, secondProjectData,
   seventhProjectData, sixthProjectData, thirdProjectData
-} from '../data/projects-data';
-import { GithubApiService } from '../services/github/github-api.service';
-import { ProjectInfoType } from '../types/project-info';
+} from '../../data/projects-data';
+import { ProjectInfoType } from '../../types/project-info';
+import { ProjectComponent } from './project/project.component';
 
 @Component({
   selector: 'my-projects',
@@ -21,19 +18,8 @@ import { ProjectInfoType } from '../types/project-info';
   templateUrl: `my-projects.component.html`,
   styleUrls: [`my-projects.component.scss`]
 })
-export class MyProjectsComponent implements OnInit{
-  arrayOfHandledReposInfo!: myProjectInfo[];
-  arrayImageNames: string[] = [ //: TODO Check if i still need t this
-    'Skill 1 HTML.png',
-    'Skill 2 CSS.png',
-    'Skill 3 JS.jpg',
-    'Skill 4 SASS.webp',
-    'Skill 5 BOOTSTRAP.png',
-    'Skill 6 TS.png',
-    'Skill 7 NG.png',
-    'Skill 8 GH.png',
-    'Skill 9 FB.webp',
-  ];
+export class MyProjectsComponent{
+
   projectsInfo: ProjectInfoType[] = [
     firstProjectData,
     secondProjectData,
@@ -51,37 +37,6 @@ export class MyProjectsComponent implements OnInit{
   // TODO: add the new tech to the tech section 'isolate commit'...
   // TODO: restructure the app 'isolate commit'...
 
-
-  constructor(private httpSer: GithubApiService){}
-  ngOnInit(): void {
-    const localArrayOfHandledReposInfo = JSON.parse(localStorage.getItem('ArrayOfHandledReposInfo') as string);
-    if(localArrayOfHandledReposInfo){
-      this.arrayOfHandledReposInfo = localArrayOfHandledReposInfo;
-    }else{
-    this.httpSer.getReposInfo()
-      .pipe(
-        map<(myProjectInfo | "")[], myProjectInfo[]>((arrayOfHandledReposInfo: (myProjectInfo | "")[]) => {
-          const filteredArray =  arrayOfHandledReposInfo.filter((HandledRepoInfo: myProjectInfo | "") => HandledRepoInfo);
-          return filteredArray as myProjectInfo[];
-        })
-      )
-      .subscribe({
-        next: (nextPara : myProjectInfo[]) =>{ 
-          this.arrayOfHandledReposInfo = nextPara;
-          this.arrayOfHandledReposInfo
-            .sort((handledRepoObject1, handledRepoObject2) => {
-              const dateOfObject1 : Date = new Date (handledRepoObject1.PublishDate);
-              const dateOfObject1ToNumber : number = dateOfObject1.getTime();
-              const dateOfObject2 : Date = new Date (handledRepoObject2.PublishDate);
-              const dateOfObject2ToNumber : number = dateOfObject2.getTime();
-              let ResultOfSubtraction : number = dateOfObject2ToNumber - dateOfObject1ToNumber ;
-              return ResultOfSubtraction;
-            })
-          // localStorage.setItem('ArrayOfHandledReposInfo', JSON.stringify(this.arrayOfHandledReposInfo));
-        }
-      })
-    }
-  }
 }
 
 
@@ -148,4 +103,5 @@ export class MyProjectsComponent implements OnInit{
     },
 
     : TODO adding the repo url to the project box
+    : TODO Remove all comments...
 */

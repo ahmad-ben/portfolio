@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RealtimeDataService } from '../../services/database/realtime-data.service';
+import { RealtimeDataService } from 'src/app/services/database/realtime-data.service';
 
 @Component({
   selector: 'contact-form',

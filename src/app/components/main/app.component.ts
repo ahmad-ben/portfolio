@@ -1,6 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { RouterLink, RouterModule } from "@angular/router";
 import { AboutMeComponent } from "../about-me/about-me.component";
 import { ContactComponent } from "../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
@@ -13,8 +12,6 @@ import { NavbarComponent } from "../navbar/navbar.component";
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
-    RouterLink,
     NavbarComponent,
     AboutMeComponent,
     MySkillsComponent,
