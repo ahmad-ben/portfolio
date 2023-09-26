@@ -16,7 +16,7 @@ export class MySkillsComponent implements OnInit, AfterViewInit {
     {skillName: 'CSS', color: '#06ccff', masteryLevel: '90', imageUrl: './assets/Images/my skills/Skill 2 CSS.png'},
     {skillName: 'JS', color: '#ff00be', masteryLevel: '85', imageUrl: './assets/Images/my skills/Skill 3 JS.jpg'},
     {skillName: 'SASS', color: '#fee800', masteryLevel: '85', imageUrl: './assets/Images/my skills/Skill 4 SASS.webp'},
-    {skillName: 'BS', color: '#04fc43', masteryLevel: '75', imageUrl: './assets/Images/my skills/Skill 5 BS.png'},
+    {skillName: 'BS', color: '#04fc43', masteryLevel: '75', imageUrl: './assets/Images/my skills/Skill 5 BOOTSTRAP.png'},
     {skillName: 'TS', color: '#06ccff', masteryLevel: '75', imageUrl: './assets/Images/my skills/Skill 6 TS.png'},
     {skillName: 'Angular', color: '#ff00be', masteryLevel: '80', imageUrl: './assets/Images/my skills/Skill 7 NG.png'},
     {skillName: 'Github', color: '#fee800', masteryLevel: '70', imageUrl: './assets/Images/my skills/Skill 8 GH.png'},

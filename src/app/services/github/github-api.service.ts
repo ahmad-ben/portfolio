@@ -14,7 +14,7 @@ export class GithubApiService {
     'Skill 2 CSS.png',
     'Skill 3 JS.jpg',
     'Skill 4 SASS.webp',
-    'Skill 5 BS.png',
+    'Skill 5 BOOTSTRAP.png',
     'Skill 6 TS.png',
     'Skill 7 NG.png',
     'Skill 8 GH.png',
@@ -149,8 +149,4 @@ export class GithubApiService {
 
 
 }
-
-
-
-
 
