@@ -12,12 +12,11 @@ export class NavbarComponent implements OnInit{
   menuIcons = document.getElementById('menu-icon') as HTMLElement;
   ulSmall = document.getElementById('ul-small') as HTMLUListElement;
   
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   menuClicked(menuIcon: HTMLElement, sectionsUl: HTMLUListElement){
     menuIcon.classList.toggle('active');
     sectionsUl.classList.toggle('active');
   }
+
 }
