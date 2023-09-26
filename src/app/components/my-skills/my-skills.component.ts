@@ -43,9 +43,3 @@ export class MySkillsComponent implements OnInit, AfterViewInit {
     observer.observe(this.elementRef.nativeElement);
   }
 }
-
-
-// "../../../assets/Images/my skills/Skill 10 Node.png"
-// "../../../assets/Images/my skills/Skill 11 EX.png"
-// "../../../assets/Images/my skills/Skill 12 MongoDB.png"
-// "../../../assets/Images/my skills/Skill 13 Tailwind.png"
