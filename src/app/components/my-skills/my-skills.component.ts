@@ -20,7 +20,11 @@ export class MySkillsComponent implements OnInit, AfterViewInit {
     {skillName: 'TS', color: '#06ccff', masteryLevel: '75', imageUrl: './assets/Images/my skills/Skill 6 TS.png'},
     {skillName: 'Angular', color: '#ff00be', masteryLevel: '80', imageUrl: './assets/Images/my skills/Skill 7 NG.png'},
     {skillName: 'Github', color: '#fee800', masteryLevel: '70', imageUrl: './assets/Images/my skills/Skill 8 GH.png'},
-    {skillName: 'Firebase', color: '#04fc43', masteryLevel: '70', imageUrl: './assets/Images/my skills/Skill 9 FB.webp'}
+    {skillName: 'Firebase', color: '#04fc43', masteryLevel: '70', imageUrl: './assets/Images/my skills/Skill 9 FB.webp'},
+    {skillName: 'Node', color: '#06ccff', masteryLevel: '70', imageUrl: './assets/Images/my skills/Skill 10 Node.png'},
+    {skillName: 'Express', color: '#ff00be', masteryLevel: '75', imageUrl: './assets/Images/my skills/Skill 11 EX.png'},
+    {skillName: 'MongoDB', color: '#fee800', masteryLevel: '75', imageUrl: './assets/Images/my skills/Skill 12 MongoDB.png'},
+    {skillName: 'Tailwind', color: '#04fc43', masteryLevel: '80', imageUrl: './assets/Images/my skills/Skill 13 Tailwind.png'},
   ];
 
   constructor(private elementRef: ElementRef){}
@@ -39,3 +43,9 @@ export class MySkillsComponent implements OnInit, AfterViewInit {
     observer.observe(this.elementRef.nativeElement);
   }
 }
+
+
+// "../../../assets/Images/my skills/Skill 10 Node.png"
+// "../../../assets/Images/my skills/Skill 11 EX.png"
+// "../../../assets/Images/my skills/Skill 12 MongoDB.png"
+// "../../../assets/Images/my skills/Skill 13 Tailwind.png"

@@ -29,8 +29,10 @@
       svg{}
     }   
     .features-images{
+      flex-wrap: wrap;
       .feature-image{
         overflow: hidden;
+        margin-bottom: 5px;
         img{
           width: 25px;
           height: 25px;

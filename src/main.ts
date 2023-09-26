@@ -13,7 +13,7 @@ import 'firebase/auth';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import { getFirestore } from 'firebase/firestore';
-import { AppComponent } from "./app/components/main/app.component";
+import { AppComponent } from "./app/components/root/app.component";
 import { environment } from "./environments/environment";
 
 

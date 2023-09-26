@@ -103,8 +103,8 @@ export const ninthProjectData: ProjectInfoType = {
     `./assets/Images/my skills/Skill 13 Tailwind.png`,
     `./assets/Images/my skills/Skill 6 TS.png`,
     `./assets/Images/my skills/Skill 7 NG.png`,
-    `./assets/Images/my skills/Skill 12 Node.png`,
-    `./assets/Images/my skills/Skill 10 EX.png`,
-    `./assets/Images/my skills/Skill 11 MongoDB.png`,
+    `./assets/Images/my skills/Skill 10 Node.png`,
+    `./assets/Images/my skills/Skill 11 EX.png`,
+    `./assets/Images/my skills/Skill 12 MongoDB.png`,
   ],
 };

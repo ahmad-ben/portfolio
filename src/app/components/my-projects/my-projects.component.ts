@@ -32,11 +32,6 @@ export class MyProjectsComponent{
     ninthProjectData,
   ]
 
-  // TODO: Remove all any properties, and services for dealing with github...
-  // TODO: clean up the github repos...
-  // TODO: add the new tech to the tech section 'isolate commit'...
-  // TODO: restructure the app 'isolate commit'...
-
 }
 
 
@@ -102,6 +97,5 @@ export class MyProjectsComponent{
       ],
     },
 
-    : TODO adding the repo url to the project box
-    : TODO Remove all comments...
+
 */
