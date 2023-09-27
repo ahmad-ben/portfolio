@@ -36,7 +36,6 @@ export class AppComponent {
 
   changeMode(btnElement: HTMLElement) {
     this.darkMode = !this.darkMode;
-    console.log(this.darkMode);
     if (this.darkMode) {
       document.documentElement.style.setProperty("--back-color", "#434750");
       document.documentElement.style.setProperty(
