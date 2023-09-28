@@ -5,14 +5,15 @@ footer{
     color: var(--secondary-font-color);
   }
   .love{ 
-    color: var(--secondary-font-color); 
+    width: 32px;
+    height: 32px;
   }
 }
 
 @media (max-width: 767px) {
   footer{
     font-size: 1.8rem;
-    svg{
+    .love{
       width:  26px;
       height: 26px;
     }
@@ -22,7 +23,7 @@ footer{
 @media (max-width: 455px) {
   footer{
     font-size: 1.4rem;
-    svg{
+    .love{
       width:  20px;
       height: 20px;
     }

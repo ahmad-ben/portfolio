@@ -1,6 +1,8 @@
 .personal-info{
-  svg{ fill: var(--primary-font-color); }
   .social-media{
+    a{
+      img{}
+    }
     svg{
       width: 35px;
       height: 35px;
@@ -27,3 +29,6 @@
     height: 350px;
   }
 }
+
+
+// TODO: Remove all the direct css rules for svg 'we will make them images'

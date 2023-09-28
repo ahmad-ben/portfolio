@@ -10,13 +10,13 @@
   border: none;
   border-radius: 50%;
   transition: var(--transition-time);
+  min-width: 42px;
+  min-height: 42px;
   &.dark{
     background-color: white;
-    svg { fill: black; }
   }
   &.light{
     background-color: black;
-    svg{ fill: white }
   }
 }
 
@@ -33,13 +33,16 @@
   border-radius: 50%;
   transition: var(--transition-time);
   animation: up-down 1s infinite alternate;
+  min-width: 42px;
+  min-height: 42px;
   &.dark{
     background-color: white;
-    svg { fill: black; }
   }
   &.light{
     background-color: black;
-    svg{ fill: white }
+    img{
+      filter: invert(1);
+    }
   }
 }
 

@@ -1,23 +1,32 @@
 <div class="navbar">
+  
   <div class="container d-block d-md-flex justify-content-md-center align-items-md-center gap-md-5">
+    
     <nav class="nav col-md-4">
+
       <svg #menuIcon (click)="menuClicked(menuIcon, sectionsUl)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path
           d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
       </svg>
+
       <ul class="ms-auto" #sectionsUl>
         <li style="--i: 4;" (click)="menuClicked(menuIcon, sectionsUl)"> <a href="#about-me"> About Me </a> </li>
         <li style="--i: 3;" (click)="menuClicked(menuIcon, sectionsUl)"> <a href="#my-skills"> My Skills </a> </li>
         <li style="--i: 2;" (click)="menuClicked(menuIcon, sectionsUl)"> <a href="#my-projects"> Projects </a> </li>
         <li style="--i: 1;" (click)="menuClicked(menuIcon, sectionsUl)"> <a href="#contact"> Contact </a> </li>
       </ul>
+
     </nav>
+    
     <div class="introduce col-md-7">
+
       <p>
         <span class="hi"> HI, </span>
         <span class="name"> My Name Is <span> Ahmed Ben Chakhter. </span> </span>
         <span class="job"> And I'm A: <span>Front-End Angular Developer.</span> </span>
       </p>
+
     </div>
+
   </div>
 </div>

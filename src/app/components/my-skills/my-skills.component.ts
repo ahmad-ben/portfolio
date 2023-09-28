@@ -42,4 +42,5 @@ export class MySkillsComponent implements OnInit, AfterViewInit {
     });
     observer.observe(this.elementRef.nativeElement);
   }
+
 }
