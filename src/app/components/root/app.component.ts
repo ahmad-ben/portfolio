@@ -35,32 +35,43 @@ export class AppComponent {
   }
 
   changeMode(btnElement: HTMLElement) {
+
     this.darkMode = !this.darkMode;
+
     if (this.darkMode) {
-      document.documentElement.style.setProperty("--back-color", "#434750");
+
+      document.documentElement.style.setProperty("--back-color", "#1f1f1f");
+      document.documentElement.style.setProperty("--soft-skills-bg", "#fff");
+      document.documentElement.style.setProperty("--soft-skills-color", "#000");
       document.documentElement.style.setProperty(
         "--primary-font-color",
-        "#00d4ff"
+        "#fff"
       );
       document.documentElement.style.setProperty(
         "--secondary-font-color",
-        "#009afa"
+        "#f0e0d0"
       );
-      document.documentElement.style.setProperty("--boxes-space", "#434750");
+      document.documentElement.style.setProperty("--boxes-space", "#1f1f1f");
       document.documentElement.style.setProperty("--error-color", "#FF5454");
+
     } else {
-      document.documentElement.style.setProperty("--back-color", "#0ff");
+
+      document.documentElement.style.setProperty("--back-color", "#fff");
+      document.documentElement.style.setProperty("--soft-skills-bg", "#000");
+      document.documentElement.style.setProperty("--soft-skills-color", "#fff");
       document.documentElement.style.setProperty(
         "--primary-font-color",
-        "#004666"
+        "#00000099"
       );
       document.documentElement.style.setProperty(
         "--secondary-font-color",
-        "#185395"
+        "#000000"
       );
-      document.documentElement.style.setProperty("--boxes-space", "#0ff");
+      document.documentElement.style.setProperty("--boxes-space", "#fff");
       document.documentElement.style.setProperty("--error-color", "#a51d1d");
+
     }
+
   }
 
   goToTop() {
