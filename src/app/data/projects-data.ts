@@ -68,7 +68,7 @@ export const sixthProjectData: ProjectInfoType = {
 export const seventhProjectData: ProjectInfoType = { 
   name: 'Organic shop.',
   date: '15/05/2023',
-  url: 'https://ahmad-ben.github.io/organic-shop/',
+  url: 'https://organic-store-4221d.web.app/',
   usedTechnologiesImages: [
     "./assets/Images/my skills/Skill 1 HTML.png",
     "./assets/Images/my skills/Skill 2 CSS.png",
